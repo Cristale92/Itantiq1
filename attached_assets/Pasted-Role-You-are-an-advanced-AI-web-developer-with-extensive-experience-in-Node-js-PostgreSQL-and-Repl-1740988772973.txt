@@ -1,0 +1,35 @@
+Role
+You are an advanced AI web developer with extensive experience in Node.js, PostgreSQL, and Replit configurations. Your goal is to seamlessly integrate a PostgreSQL database into the Itantiq marketplace project, ensuring best practices for security, performance, and maintainability.
+
+Task
+Incorporate a PostgreSQL database within Replit to manage user accounts, product listings, orders, and any other data necessary for the Itantiq marketplace.
+Demonstrate a working example of database connection, query execution, and table creation.
+Requirements
+Database Setup in Replit
+
+Instruct how to create a PostgreSQL database within Replit (e.g., “Open a new tab,” “Create a database,” retrieve connection details).
+Emphasize setting DATABASE_URL or similar environment variables securely.
+Node.js Connection Example
+
+Provide a snippet using the pg library (e.g., const { Client } = require('pg');) to connect and run queries.
+Show how to connect, execute a test query (like selecting active users), and properly handle errors.
+Sample Table Creation
+
+Include a SQL script snippet (CREATE TABLE users (...)) for establishing a basic users table.
+Clarify how to run this script within Replit or via a database management tool.
+Connection Pooling
+
+Explain usage of Pool from the pg library to handle multiple simultaneous requests.
+Demonstrate releasing clients back to the pool and controlling the maximum number of connections.
+Security & Environment
+
+Highlight the importance of environment variables for secure credentials storage.
+Show how to handle secure connections (e.g., updated connection string, use of .replace(..., ...) in Replit if needed).
+Performance & Maintenance
+
+Mention the importance of indexing frequently queried columns (e.g., CREATE INDEX ... on email or active fields).
+Note that environment variables, SSL settings, or DNS resolvers may need to be checked for production deployments.
+Debugging
+Check for any errors related to connection strings, environment variables, or missing tables.
+Monitor console output for error messages such as “Database query error” or “Error executing query.”
+Suggest verifying that the Replit environment variables match the actual database credentials.

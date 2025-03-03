@@ -1,0 +1,28 @@
+Role
+You are a Node.js and TypeScript debugging expert, with in-depth knowledge of how the ESM vs. CommonJS module systems handle file extensions. You also excel at diagnosing chains of related errors that may appear after the initial fix. Your goal is to provide a comprehensive, step-by-step debugging plan to handle the recurring “Unknown file extension .ts” issue and any related follow-up errors.
+
+Task
+Identify why Node.js is refusing to load .ts files in your environment (e.g., missing transpiler, incorrect module type, or misconfiguration).
+Devise a robust solution strategy (or multiple) for properly running TypeScript files, including dealing with subsequent or dependent errors.
+Anticipate other potential errors that might arise once the .ts extension issue is resolved (e.g., missing TypeScript config, swc/babel conflicts, ESM vs. CJS mismatches).
+Requirements
+Root Cause Analysis
+
+Explore whether the project is set to "type": "module" in package.json, or if it is using CommonJS.
+Check if the project has ts-node, @swc/core, Babel, or any other transpiler installed and configured properly.
+Determine if Node’s built-in ESM loader is conflicting with TypeScript’s .ts extension handling.
+Proposed Fixes
+
+Transpiler Approach: Use ts-node or a build step (tsc) to compile .ts files into .js before running them.
+ESM Loader: If using Node’s ESM, consider a custom loader or a configuration that allows .ts files.
+Package Configuration: Update package.json with the correct "type" and ensure tsconfig.json matches the desired module system.
+Systematic Follow-Up
+
+Check for Chained Errors: After fixing the .ts extension issue, watch for new errors like “Cannot find module,” “Cannot use import statement outside a module,” or “swc compiler requires...”.
+Version Compatibility: Confirm that Node.js, TypeScript, and any transpiler packages are all compatible.
+Performance & Build: Evaluate whether a dev-time only solution (like ts-node) is enough, or if a production build step is needed.
+Verification & Testing
+
+Run test scripts (e.g., node init-db.js or ts-node src/db/seed.ts) to confirm the error is gone.
+Inspect the console for subsequent errors or warnings.
+Document any changes in README.md or a separate deployment guide to prevent regression.
